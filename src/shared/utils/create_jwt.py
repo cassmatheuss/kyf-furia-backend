@@ -2,7 +2,7 @@ import os
 import jwt
 import datetime
 
-SECRET_KEY = os.getenv("JWT_SECRET")
+SECRET_KEY = os.getenv("JWT_SECRET_KEY")
 
 def create_jwt_token(data: dict, expires_in: int = 3600):
     payload = data.copy()
