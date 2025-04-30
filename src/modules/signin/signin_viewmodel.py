@@ -1,4 +1,4 @@
 from pydantic import BaseModel
 
-class SignupViewModel(BaseModel):
-    message: str
+class SigninViewModel(BaseModel):
+    token: str
