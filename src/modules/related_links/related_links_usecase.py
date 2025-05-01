@@ -1,19 +1,21 @@
-from src.modules.signin.signin_viewmodel import SigninViewModel
-from src.shared.utils.create_jwt import create_jwt_token
-from src.modules.signin.signin_repository import SigninRepository
+from src.modules.related_links.related_links_viewmodel import RelatedLinksViewModel
+from src.modules.related_links.related_links_repository import RelatedLinksRepository
 
 class RelatedLinksUseCase:
-    def __init__(self, repo: SigninRepository):
+    def __init__(self, repo: RelatedLinksRepository):
         self.repo = repo
 
     def __call__(self, data: dict):
         try:
-            email = data.get("email")
-            password = data.get("password")
-            user = self.repo.authenticate_user(email, password)
-            if not user:
-                raise ValueError("Usuário não encontrado.")
-            viemodel = SigninViewModel(token=create_jwt_token(data={"email": user["email"], "sub": str(user["_id"]), "resume": user["resume"]}))
-            return viemodel.dict()
+            resume = data.get("resume")
+            if not resume:
+                raise Exception("Resume not found in token")
+            
+            output = self.repo.rate_site_relevance(site_url=data.get("site_url"), user_resume=resume)
+            score_and_text = RelatedLinksViewModel(
+                text=output['explicacao'],
+                score=output['nota']
+            ).dict()
+            return score_and_text
         except Exception as e:
             raise Exception(f"{str(e)}")
