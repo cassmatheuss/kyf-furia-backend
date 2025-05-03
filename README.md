@@ -1,4 +1,5 @@
 Bem-vindo ao Furia KYF! Este app foi desenvolvido para o desafio FURIA, utilizando Python Flask, LangChain, OpenRouter e Selenium. Ele permite cadastro inteligente de usuários, validação de identidade com IA, login seguro e análise de links relevantes ao perfil do usuário. 🚀
+
 ✨ Funcionalidades
 
     Cadastro de Usuário (/signup)
@@ -11,7 +12,7 @@ Bem-vindo ao Furia KYF! Este app foi desenvolvido para o desafio FURIA, utilizan
 
         Armazena preferências e resumo do usuário
 
-    Login Seguro (/signin)
+    Login (/signin)
 
         Autenticação via email e senha criptografada 🔒
 
@@ -63,12 +64,14 @@ Execute a aplicação:
     Use as rotas para cadastrar, logar, validar token e analisar links.
 
 📲 Rotas
+```
   /signup	Cadastro de usuário com dados, preferências e validação de identidade
   /signin	Login com email e senha
   /verifytoken	Verifica se o token do usuário é válido
   /related-links	Analisa se um link é relevante ao perfil usando IA e Selenium
+```
+
 💡 Observações
+Todos os dados são tratados com segurança e criptografia.
 
-    Todos os dados são tratados com segurança e criptografia.
-
-    A IA é utilizada tanto para validação de identidade quanto para análise de relevância dos links.
+A IA é utilizada tanto para validação de identidade quanto para análise de relevância dos links.
