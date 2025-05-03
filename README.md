@@ -48,7 +48,7 @@ Bem-vindo ao Furia KYF! Este app foi desenvolvido para o desafio FURIA, utilizan
     poetry install
     poetry run python main.py
 
-ENV
+🔒 ENV
 
     MONGO_DB_URL=
     DB_NAME=
