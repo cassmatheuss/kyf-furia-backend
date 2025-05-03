@@ -72,6 +72,8 @@ Execute a aplicação:
 ```
 
 💡 Observações
+```
 Todos os dados são tratados com segurança e criptografia.
 
 A IA é utilizada tanto para validação de identidade quanto para análise de relevância dos links.
+```
