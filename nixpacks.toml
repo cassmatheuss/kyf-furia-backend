@@ -1,5 +1,7 @@
 [phases.setup]
 nixpkgs = [
+  "python313Full",
+  "python313Packages.pip", 
   "gcc", "g++", "make", "cmake", "chromium", "chromiumDriver", "libglib", "nss", "gconf", "fontconfig", "libx11", 
   "libxcomposite", "libxcursor", "libxdamage", "libxi", "libxtst", "libxrandr", "alsaLib", "atk", "atkmm", "gtk3", "dbus-glib"
 ]
