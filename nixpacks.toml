@@ -1,0 +1,14 @@
+[phases.setup]
+nixPkgs = [
+  "python312",
+  "cmake",
+  "gcc",
+  "chromium"
+]
+
+[phases.build]
+cmds = ["poetry install --no-root"]
+
+[start]
+cmd = "PYTHONPATH=src poetry run python main.py"
+
