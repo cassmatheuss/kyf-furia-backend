@@ -15,7 +15,7 @@ def get_resume_from_token(token):
     except Exception as e:
         return None
     
-@related_links_bp.route('/related-links', methods=['GET'])
+@related_links_bp.route('/related-links', methods=['POST'])
 @jwt_required
 def related_links():
 
