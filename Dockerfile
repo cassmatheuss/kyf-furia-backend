@@ -8,7 +8,7 @@ ENV POETRY_VERSION=2.1.2 \
     POETRY_HOME="/root/.local" \
     PATH="/root/.local/bin:$PATH"
 
-RUN apt-get update && \
+    RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         gcc \
         g++ \
@@ -25,6 +25,9 @@ RUN apt-get update && \
         libgconf-2-4 \
         libfontconfig1 \
         libx11-6 \
+        libxext6 \
+        libsm6 \
+        libxrender1 \
         libxcomposite1 \
         libxcursor1 \
         libxdamage1 \
@@ -36,8 +39,8 @@ RUN apt-get update && \
         libatk-bridge2.0-0 \
         libgtk-3-0 \
         libdbus-glib-1-2 \
-        && apt-get clean \
-        && rm -rf /var/lib/apt/lists/*
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN curl -sSL https://install.python-poetry.org | python3 -
 
