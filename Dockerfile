@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM python:3.13-slim
 
 ENV POETRY_VERSION=2.1.2 \
     PYTHONUNBUFFERED=1 \
@@ -18,14 +18,13 @@ RUN apt-get update && \
         gnupg2 \
         wget \
         unzip \
+        chromium \
+        chromium-driver \
         libglib2.0-0 \
         libnss3 \
         libgconf-2-4 \
         libfontconfig1 \
         libx11-6 \
-        libxext6 \
-        libsm6 \
-        libxrender1 \
         libxcomposite1 \
         libxcursor1 \
         libxdamage1 \
@@ -37,8 +36,8 @@ RUN apt-get update && \
         libatk-bridge2.0-0 \
         libgtk-3-0 \
         libdbus-glib-1-2 \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+        && apt-get clean \
+        && rm -rf /var/lib/apt/lists/*
 
 RUN curl -sSL https://install.python-poetry.org | python3 -
 
