@@ -1,0 +1,15 @@
+[phases.setup]
+nixpkgs = [
+  "gcc", "g++", "make", "cmake", "chromium", "chromiumDriver", "libglib", "nss", "gconf", "fontconfig", "libx11", 
+  "libxcomposite", "libxcursor", "libxdamage", "libxi", "libxtst", "libxrandr", "alsaLib", "atk", "atkmm", "gtk3", "dbus-glib"
+]
+
+[phases.install]
+cmds = [
+  "pip install poetry==2.1.2",
+  "poetry config virtualenvs.create false --local",
+  "poetry install --no-interaction --no-ansi --no-root"
+]
+
+[phases.start]
+cmd = "poetry run python main.py"
