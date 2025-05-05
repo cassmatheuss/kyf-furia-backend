@@ -1,4 +1,5 @@
 Bem-vindo ao Furia KYF! Este app foi desenvolvido para o desafio FURIA, utilizando Python Flask, LangChain, OpenRouter e Selenium. Ele permite cadastro inteligente de usuários, validação de identidade com IA, login seguro e análise de links relevantes ao perfil do usuário. 🚀
+![chatbot(2)](https://github.com/user-attachments/assets/fe5ccdfd-dcaf-4005-a822-0fa40f4315cd)
 
 ✨ Funcionalidades
 
