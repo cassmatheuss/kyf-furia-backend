@@ -13,7 +13,7 @@ class SigninUseCase:
             user = self.repo.authenticate_user(email, password)
             if not user:
                 raise ValueError("Usuário não encontrado.")
-            viemodel = SigninViewModel(token=create_jwt_token(data={"email": user["email"], "user_id": str(user["_id"])}))
+            viemodel = SigninViewModel(token=create_jwt_token(data={"email": user["email"], "sub": str(user["_id"]), "resume": user["resume"]}))
             return viemodel.dict()
         except Exception as e:
             raise Exception(f"{str(e)}")

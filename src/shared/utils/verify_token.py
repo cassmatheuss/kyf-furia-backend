@@ -2,7 +2,7 @@ import datetime
 import os
 import jwt
 
-SECRET_KEY = os.getenv("JWT_SECRET")
+SECRET_KEY = os.getenv("JWT_SECRET_KEY")
 
 def verify_jwt_token(token: str):
     try:
