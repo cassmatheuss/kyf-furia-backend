@@ -18,4 +18,4 @@ app.register_blueprint(verifytoken_bp)
 app.register_blueprint(related_links_bp)
 if __name__ == '__main__':
     Environments()
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
